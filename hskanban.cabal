@@ -1,0 +1,96 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hskanban
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/hskanban#readme>
+homepage:       https://github.com/githubuser/hskanban#readme
+bug-reports:    https://github.com/githubuser/hskanban/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/hskanban
+
+library
+  exposed-modules:
+      Actions
+      Dialog
+      Form
+      Note
+      Task
+      TextWrap
+      Types
+      Widgets
+      FileIO
+      KbUtils
+      AppState
+      Layout
+  other-modules:
+      Help
+      Paths_hskanban
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+      TemplateHaskell
+      DeriveGeneric
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , brick <=0.68.1
+    , bytestring
+    , containers
+    , digest
+    , directory
+    , filepath
+    , hedis
+    , microlens
+    , microlens-th
+    , optparse-applicative
+    , split
+    , text
+    , vty >=5.25 && <5.34
+  default-language: Haskell2010
+
+executable hskanban
+  main-is: Main.hs
+  other-modules:
+      Paths_hskanban
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+      TemplateHaskell
+      DeriveGeneric
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , brick <=0.68.1
+    , bytestring
+    , containers
+    , digest
+    , directory
+    , filepath
+    , hedis
+    , hskanban
+    , microlens
+    , microlens-th
+    , optparse-applicative
+    , split
+    , text
+    , vty >=5.25 && <5.34
+  default-language: Haskell2010

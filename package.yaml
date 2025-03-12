@@ -1,0 +1,79 @@
+github:              vincentax/hskanban
+license:             GPL-3
+author:              Vincent He
+maintainer:          545559139@qq.com
+
+synopsis: A terminal-based multi-board Kanban application
+description: "A feature-rich terminal-based Kanban application"
+
+extra-source-files:
+- LICENSE.md
+- README.md
+- package.yaml
+
+dependencies:
+- base >= 4.7 && < 5
+- filepath
+
+ghc-options: -Wall
+
+default-extensions: 
+  - OverloadedStrings
+  - TemplateHaskell
+  - DeriveGeneric
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Actions
+    - Dialog
+    - Form
+    - Note
+    - Task
+    - TextWrap
+    - Types
+    - Widgets
+    - FileIO
+    - KbUtils
+    - AppState
+    - Layout
+  dependencies: 
+    - brick <= 0.68.1
+    - text
+    - microlens
+    - microlens-th
+    - vty >= 5.25 && < 5.34
+    - split
+    - aeson
+    - bytestring
+    - optparse-applicative
+    - containers
+    - directory
+    - hedis
+    - digest
+    - filepath
+
+executables:
+  hskanban:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hskanban
+    - aeson
+    - brick <= 0.68.1
+    - text
+    - microlens
+    - microlens-th
+    - vty >= 5.25 && < 5.34
+    - split
+    - bytestring
+    - optparse-applicative
+    - directory
+    - containers
+    - hedis
+    - digest
+    - filepath
